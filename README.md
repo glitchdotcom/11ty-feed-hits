@@ -8,6 +8,7 @@ This starter kit sets up a basic page hit counter for a website using a KV Store
 * We create a KV Store named `pagehits` on first run – it's listed in the `fastly.toml` file along with the backend
 * Each page request increments the number of hits in the store
 * The `/stats` page returns a list of the pages and their hits
+* The `/feed/feed.json` endpoint returns a synthetic page from the 11ty feed
 
 You can use this starter kit out of the box with the default backend, or you can use your own website by changing it in the `fastly.toml` section `[setup.backends.blog]` __before you deploy the app for the first time__ (otherwise you need to update the backend address via the Fastly CLI)
 
