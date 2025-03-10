@@ -31,6 +31,24 @@ router.get(`${root}stats`, async (req, res) => {
   res.withStatus(backendResponse.status).html(getPage("Page hits", totals));
 });
 
+// Synthetic HTML page from JSON feed data
+router.get(`${root}feed/feed.json`, async (req, res) => {
+  let originData = await backendResponse.json();
+  let posts = ``;
+  for (const pst of originData.items) {
+    let date = new Date(pst.date_published);
+    date = date.toDateString();
+    let linkUrl = new URL(pst.url);
+    let postRecord = await store.get(linkUrl.pathname);
+    let postCount = 0;
+    if (postRecord)
+      postCount = await postRecord.text();
+    posts += `<p><a href="${linkUrl.pathname}"><strong>${pst.title}</strong></a>
+      <br/>${date}<br/><em>${postCount} views</em></p>`;
+  }
+  res.withStatus(backendResponse.status).html(getPage(originData.title, posts));
+});
+
 // Default response
 router.all("(.*)", async (req, res) => {
   console.log(req.path);
