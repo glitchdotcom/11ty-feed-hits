@@ -35,7 +35,7 @@ npm install @fastly/cli
 Start a new Compute project using this app as a template:
 
 ```
-npx fastly compute init --from=https://github.com/glitchdotcom/hit-counter/
+fastly compute init --from=https://github.com/glitchdotcom/hit-counter/
 ```
 
 > 💡 Include the flag `--accept-defaults` if you don't want to choose all the details.
@@ -56,7 +56,7 @@ By default the edge app will use `glitchdotcom.github.io` as its origin, but you
 Once you have the repo installed locally and your API token set up in your environment, use the publish command to deploy the app to a Compute service:
 
 ```
-npx fastly compute publish
+fastly compute publish
 ```
 
 ![cli output](https://github.com/user-attachments/assets/fc53135d-af14-4f10-843a-1f7ccaacaebc)
