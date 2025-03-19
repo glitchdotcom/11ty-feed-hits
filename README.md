@@ -3,7 +3,7 @@
 This starter kit sets up a basic page hit counter for a website using a KV Store in a Fastly Compute app written in JavaScript. The app creates two synthetic pages, one to display the hit stats for the site, and one to display the JSON RSS feed in an HTML page that includes the page hits.
 
 * The app uses a default origin website as its backend `glitchdotcom.github.io` with the sample site at `/my-site/`: [glitchdotcom.github.io/my-site/](https://glitchdotcom.github.io/my-site/)
-  * The sample site is a variant of the [Eleventy Base Blog](https://demo-base-blog.11ty.dev/) which you can also [clone and deploy to Github Pages](https://github.com/glitchdotcom/my-site) if you like
+  * The sample site is a variant of the [Eleventy Base Blog](https://demo-base-blog.11ty.dev/) which you can also [clone and deploy to Github Pages](https://github.com/glitchdotcom/my-site) if you like – **update the `package.json` mentions of `my-site` to your repo name in your clone**
 * The app uses [Expressly](https://expressly.edgecompute.app/) for routing requests with the [Fastly JavaScript Compute SDK](https://js-compute-reference-docs.edgecompute.app/docs/)
 * We create a KV Store named `pagehits` 
 * Each page request increments the number of hits in the store
