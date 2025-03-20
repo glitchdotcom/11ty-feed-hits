@@ -1,4 +1,4 @@
-# Hit counter with KV Store on Fastly Compute
+# Hit counter and synthetic feed page with KV Store on Fastly Compute
 
 This starter kit sets up a basic page hit counter for a website using a KV Store in a Fastly Compute app written in JavaScript. The app creates two synthetic pages, one to display the hit stats for the site, and one to display the JSON RSS feed in an HTML page that includes the page hits.
 
